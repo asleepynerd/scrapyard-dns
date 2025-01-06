@@ -1,1 +1,21 @@
 ---
+pdk1._domainkey:
+  - ttl: 600
+    type: CNAME
+    value: pdk1._domainkey.53d16.dkim1.eu.mgsend.org
+pdk2._domainkey:
+  - ttl: 600
+    type: CNAME
+    value: pdk2._domainkey.53d16.dkim1.eu.mgsend.org
+scrapyard.london:
+  - ttl: 600
+    type: TXT
+    value: v=spf1 include:mailgun.org ~all
+  - ttl: 600
+    type: MX
+    value: mxa.eu.mailgun.org.
+    priority: 10
+  - ttl: 600
+    type: MX
+    value: mxb.eu.mailgun.org.
+    priority: 10
