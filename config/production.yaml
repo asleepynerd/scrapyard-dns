@@ -1,0 +1,18 @@
+---
+providers:
+  config:
+    class: octodns.provider.yaml.YamlProvider
+    directory: ./
+    enforce_order: False
+  cloudflare:
+    class: octodns_cloudflare.CloudflareProvider
+    email: env/CLOUDFLARE_EMAIL
+    token: env/CLOUDFLARE_TOKEN
+    delete_pcent_threshold: 1.0
+
+zones:
+  scrapyard.london.:
+    sources:
+      - config
+    targets:
+      - cloudflare
